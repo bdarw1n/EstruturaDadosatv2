@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int imprime (int *a[]){
+for(int i = 0; i < 5; i++){
+   int abs = a[i];
+  if ( abs < 0){
+  abs = -(abs);
+  printf("%d", abs);
+  printf ("\n"); }else{
+    printf("%d",  abs);
+    printf ("\n");}
+}
+
+return 0;
+}
+
+int main (){
+int  a[5];
+for(int i = 0; i < 5; i++){
+  printf ("numero: ");
+  scanf("%d", &a[i]);
+  printf ("\n");
+}
+
+imprime (a);
+return 0;
+}
