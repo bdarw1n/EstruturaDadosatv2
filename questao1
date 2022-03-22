@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct ponto {
+
+float x;
+float y;
+
+}Ponto;
+
+Ponto * CreateInsert (float a, float b) {
+
+ Ponto * p = (Ponto*)malloc(sizeof(Ponto));
+ p -> x = a;
+ p -> y = b;
+ return p;
+}
+
+float distancia ( Ponto * p1, Ponto * p2){
+ float a = p2->x - p1->x;
+ float b = p2->y - p1->y;
+ float d = sqrt(pow(a,2) + pow(b,2));
+ return d;
+}
+
+int main (){
+float a, b;
+printf("Calcular diatância entrre dois pontos: ");
+printf("\n\n\n");
+printf("eixo x do primeiro ponto: ");scanf("%f",&a);printf("\n");
+printf("eixo y do primeiro ponto: ");scanf("%f",&b);printf("\n");
+Ponto *p1 = CreateInsert (a, b);
+printf("\n\n");
+printf("eixo x do segundo ponto: ");scanf("%f",&a);printf("\n");
+printf("eixo y do segundo ponto: ");scanf("%f",&b);printf("\n");
+Ponto *p2 = CreateInsert (a, b);
+float d = distancia (p1, p2);
+printf("\n\n\n");
+printf("Ponto xy: %2.2f,%2.2f", p1 -> x, p1 -> y);
+printf("\tPonto x2y2: %2.2f,%2.2f", p2 -> x, p2 -> y);
+printf("\t Distância : %2.2f", d);
+printf("\n\n\n");
+free(p1);
+free(p2);
+return 0;
+}
