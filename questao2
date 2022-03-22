@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int i = 1, aux, produto;
+int  potencia (int base, int exp){
+ if(i < exp){
+   produto = base * aux;
+   i++;
+   potencia(produto, exp);
+ }
+ return produto;
+}
+
+int main (){
+int base, exp;
+printf("base: ");scanf("%d", &base);printf("\n");
+printf("expoente: ");scanf("%d", &exp);printf("\n");
+aux = base;
+int resultado = potencia(base, exp);
+printf("resultado: %d", resultado);
+return 0;
+}
