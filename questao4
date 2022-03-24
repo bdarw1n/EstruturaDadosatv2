@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int aux;
+
+void teste ( int *array[]){
+
+for (int i=0; i < 5; i++){
+  int positivo = array[i];
+  if (positivo > 0 ){
+    aux = positivo;
+    int soma = divisores(positivo - 1);
+    printf("esta é a soma dos divisores de %d: %d\n", positivo, soma);
+  } else{
+
+    printf(" %d Não é um número positivo\n", positivo);
+  }
+
+}
+
+
+
+}
+
+int  divisores (int positivo){
+   if(positivo == 1){
+     return  1;
+   }
+  if (aux%positivo == 0){
+
+    return  positivo +  divisores(positivo - 1);
+  }else{
+    divisores (positivo - 1);
+  }
+
+}
+
+int main (){
+
+int array[5];
+int seq =1;
+for (int i=0; i < 5; i++){
+  printf("escreva o %dº número: ", seq); scanf("%d",&array[i]);
+  printf("\n");
+  seq++;
+}
+ teste (array);
+
+return 0;
+}
