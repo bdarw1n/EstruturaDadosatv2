@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float fun (int letra, float nota1, float nota2,  float nota3);
+
+int main ( ){
+
+float nota1, nota2, nota3;
+printf("Digite a 1º nota: ");scanf("%f",&nota1);printf("\n");
+printf("Digite a 2º nota: ");scanf("%f",&nota2);printf("\n");
+printf("Digite a 3º nota: ");scanf("%f",&nota3);printf("\n");
+printf("\n");
+int letra;
+printf("Digite a letra para calcular a média...\naritmédica(1)"
+       "\nponderada(2)\nharmônica(3):\n");scanf(" %d", &letra);
+float  media =  fun ( letra,  nota1,  nota2,  nota3);
+printf("\nMédia: %2.2f", media);
+return 0;
+}
+
+float fun ( int letra ,float nota1, float nota2,  float nota3){
+    
+if (letra == 1){return (nota1 + nota2 + nota3)/3;}
+else if(letra == 2){return (nota1*5 + nota2*3 + nota3*2)/10;}
+else {return 3/(1/nota1 + 1/nota2 +1/nota3);}
+}
